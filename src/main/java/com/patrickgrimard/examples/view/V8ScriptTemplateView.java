@@ -166,10 +166,6 @@ public class V8ScriptTemplateView extends AbstractUrlBasedView {
         V8Object messages = mapToV8Object(v8, runtimeObjects, messageMap);
         runtimeObjects.add(messages);
 
-        System.out.println("this.renderFunction="+this.renderFunction);
-        System.out.println("template="+template);
-        System.out.println("modelAttributes="+ JsonUtil.toJson(modelAttributes));
-        System.out.println("messages="+JsonUtil.toJson(messages));
         Object html = v8.executeJSFunction(this.renderFunction, template, modelAttributes, messages);
         response.getWriter().write(String.valueOf(html));
 
