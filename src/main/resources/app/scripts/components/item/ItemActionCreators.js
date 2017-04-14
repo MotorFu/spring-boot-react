@@ -9,7 +9,7 @@ export function receiveItems(items) {
 export function fetchItems() {
   return (dispatch) => {
     return getResource('/api/items')
-      .then(({entity}) => dispatch(receiveItems(entity._embedded.items)));
+        .then(({entity}) => dispatch(receiveItems(entity._embedded.items)));
   };
 }
 
@@ -22,7 +22,7 @@ export function receiveAddItem(item) {
 export function addItem(name) {
   return (dispatch) => {
     return postResource('/api/items', {name})
-      .then(({entity}) => dispatch(receiveAddItem(entity)));
+        .then(({entity}) => dispatch(receiveAddItem(entity)));
   };
 }
 
@@ -35,6 +35,6 @@ export function receiveDeleteItem(name) {
 export function deleteItem(name) {
   return (dispatch) => {
     return deleteResource(`/api/items/${name}`)
-      .then(() => dispatch(receiveDeleteItem(name)));
+        .then(() => dispatch(receiveDeleteItem(name)));
   };
 }

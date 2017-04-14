@@ -1,4 +1,5 @@
 /*eslint no-unused-vars: ["error", { "varsIgnorePattern": "console" }]*/
+// import 'es6-promise';
 var window = this;
 var console = {
   error: print,
@@ -6,8 +7,11 @@ var console = {
   warn: print,
   log: print
 };
-window.setTimeout = function() {};
+window.setTimeout = function () {
+};
 window.Promise = {
-  resolve: function () {},
-  reject: function() {}
+  resolve: function () {
+  },
+  reject: function () {
+  }
 };
