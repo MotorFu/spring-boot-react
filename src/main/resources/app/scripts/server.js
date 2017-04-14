@@ -1,6 +1,8 @@
 import React from 'react';
 import {renderToString} from 'react-dom/server';
-import {ServerRouter, createServerRenderContext} from 'react-router';
+import {ServerRouter} from 'react-router';
+import createServerRenderContext from 'react-router/createServerRenderContext';
+
 import {createStore, applyMiddleware} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import {Provider} from 'react-redux';

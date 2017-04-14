@@ -4,6 +4,7 @@ import com.eclipsesource.v8.V8;
 import com.eclipsesource.v8.V8Array;
 import com.eclipsesource.v8.V8Object;
 import com.eclipsesource.v8.V8Value;
+import com.patrickgrimard.examples.JsonUtil;
 import com.patrickgrimard.examples.context.support.MappingResourceBundleMessageSource;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactoryUtils;
@@ -154,7 +155,7 @@ public class V8ScriptTemplateView extends AbstractUrlBasedView {
                 .map(o -> (V8Value) o)
                 .collect(toList());
         runtimeObjects.addAll(scriptResults);
-
+        System.out.println("model="+ JsonUtil.toJson(model));
         String template = getResourceAsString(getUrl());
         V8Object modelAttributes = mapToV8Object(v8, runtimeObjects, model);
         runtimeObjects.add(modelAttributes);
@@ -165,6 +166,10 @@ public class V8ScriptTemplateView extends AbstractUrlBasedView {
         V8Object messages = mapToV8Object(v8, runtimeObjects, messageMap);
         runtimeObjects.add(messages);
 
+        System.out.println("this.renderFunction="+this.renderFunction);
+        System.out.println("template="+template);
+        System.out.println("modelAttributes="+ JsonUtil.toJson(modelAttributes));
+        System.out.println("messages="+JsonUtil.toJson(messages));
         Object html = v8.executeJSFunction(this.renderFunction, template, modelAttributes, messages);
         response.getWriter().write(String.valueOf(html));
 

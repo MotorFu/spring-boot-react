@@ -19,19 +19,24 @@ class IndexController(private val itemRepository: ItemRepository) {
     @GetMapping("/{path:(?!.*.js|.*.css|.*.jpg|api).*$}")
     @Throws(JsonProcessingException::class)
     fun index(model: Model, request: HttpServletRequest): String {
+
+        println("1111111111111111111")
         val mapper = ObjectMapper()
 
         val req = HashMap<String, Any>()
         val root = if (request.servletPath == "/index.html") "/" else request.servletPath
+
         if (request.queryString != null)
             req.put("location", String.format("%s?%s", root, request.queryString))
         else
             req.put("location", root)
+        println("request.queryString="+req.get("location"))
         model.addAttribute("req", req)
 
         val initialState = HashMap<String, Any>()
         initialState.put("items", itemRepository.findAll())
         model.addAttribute("initialState", mapper.writeValueAsString(initialState))
+        println("2222222222222222222222")
         return "index"
     }
 }

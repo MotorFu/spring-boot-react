@@ -39,7 +39,7 @@ open class Application : WebMvcConfigurerAdapter() {
     @Bean
     open fun localeResolver() : LocaleResolver {
         val resolver = AcceptHeaderLocaleResolver()
-        resolver.defaultLocale = Locale.US
+        resolver.defaultLocale = Locale.CHINA
         return resolver
     }
 
