@@ -182,7 +182,6 @@
                         <configuration>
                             <nodeVersion>v6.9.1</nodeVersion>
                             <npmVersion>3.10.8</npmVersion>
-                            <downloadRoot>http://myproxy.example.org/nodejs/</downloadRoot>
                         </configuration>
                     </execution>
                     <execution>
