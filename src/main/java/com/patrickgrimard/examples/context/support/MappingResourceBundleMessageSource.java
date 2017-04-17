@@ -6,8 +6,7 @@ import java.util.*;
 
 /**
  * Created on 2016-12-06
- *
- * @author Patrick
+ * 国际化信息
  */
 public class MappingResourceBundleMessageSource extends ResourceBundleMessageSource {
 

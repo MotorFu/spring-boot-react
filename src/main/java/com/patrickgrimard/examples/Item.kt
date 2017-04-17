@@ -12,5 +12,7 @@ import javax.persistence.Id
  */
 @Entity
 data class Item(@Id val name: String, val quantity: Long = 0) {
+
     private constructor() : this("", 0)
+
 }

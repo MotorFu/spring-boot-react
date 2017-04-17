@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component
 @Component
 open class ItemRepositoryInitializer(private val itemRepository: ItemRepository) : CommandLineRunner {
 
+
     override fun run(vararg args: String?) {
         itemRepository.save(Item("JavaScript", 0))
         itemRepository.save(Item("React", 1))

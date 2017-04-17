@@ -8,19 +8,19 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
  * @author Patrick
  */
 public class V8ScriptTemplateViewResolver extends UrlBasedViewResolver {
-    public V8ScriptTemplateViewResolver() {
-        setViewClass(requiredViewClass());
-    }
+  private V8ScriptTemplateViewResolver () {
+    setViewClass(requiredViewClass());
+  }
 
-    public V8ScriptTemplateViewResolver(String prefix, String suffix) {
-        this();
-        setPrefix(prefix);
-        setSuffix(suffix);
-    }
+  public V8ScriptTemplateViewResolver (String prefix, String suffix) {
+    this();
+    setPrefix(prefix);
+    setSuffix(suffix);
+  }
 
 
-    @Override
-    protected Class<?> requiredViewClass() {
-        return V8ScriptTemplateView.class;
-    }
+  @Override
+  protected Class<?> requiredViewClass () {
+    return V8ScriptTemplateView.class;
+  }
 }
