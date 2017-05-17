@@ -2,6 +2,7 @@ package com.patrickgrimard.examples.context.support;
 
 import org.springframework.context.support.ResourceBundleMessageSource;
 
+import java.nio.charset.Charset;
 import java.util.*;
 
 /**
@@ -9,6 +10,7 @@ import java.util.*;
  * 国际化信息
  */
 public class MappingResourceBundleMessageSource extends ResourceBundleMessageSource {
+
 
     public Map<String, Object> getMessageMap(String basename, Locale locale) {
         Map<String, Object> messages = new HashMap<>();

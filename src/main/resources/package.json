@@ -1,9 +1,8 @@
 {
-  "name": "spring-boot-react",
-  "version": "1.1.2",
+  "name": "react-demo",
+  "version": "1.1.0",
   "description": "",
   "main": "public/main.js",
-  "author": "Patrick Grimard <pgrimard@gmail.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -12,7 +11,7 @@
     "predev": "npm run clean && npm run lint",
     "dev": "webpack -d",
     "prebuild": "npm run clean && npm run lint",
-    "build": "webpack --config webpack.production.config.babel.js -p",
+    "build": "webpack --config webpack.pro.config.babel.js -p",
     "prewatch": "npm run clean",
     "watch": "webpack -d --watch"
   },

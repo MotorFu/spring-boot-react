@@ -18,24 +18,24 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <developers>
-        <developer>
-            <id>pgrimard</id>
-            <name>Patrick Grimard</name>
-            <email>pgrimard@gmail.com</email>
-            <organization>Patrick Grimard</organization>
-            <organizationUrl>https://patrickgrimard.io</organizationUrl>
-        </developer>
-    </developers>
+    <!--<developers>-->
+        <!--<developer>-->
+            <!--<id>pgrimard</id>-->
+            <!--<name>Patrick Grimard</name>-->
+            <!--<email>pgrimard@gmail.com</email>-->
+            <!--<organization>Patrick Grimard</organization>-->
+            <!--<organizationUrl>https://patrickgrimard.io</organizationUrl>-->
+        <!--</developer>-->
+    <!--</developers>-->
 
-    <issueManagement>
-        <system>GitHub</system>
-        <url>https://gitlab.com/pgrimard/spring-boot-react/issues</url>
-    </issueManagement>
+    <!--<issueManagement>-->
+        <!--<system>GitHub</system>-->
+        <!--<url>https://gitlab.com/pgrimard/spring-boot-react/issues</url>-->
+    <!--</issueManagement>-->
 
-    <scm>
-        <url>https://gitlab.com/pgrimard/spring-boot-react</url>
-    </scm>
+    <!--<scm>-->
+        <!--<url>https://gitlab.com/pgrimard/spring-boot-react</url>-->
+    <!--</scm>-->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -122,6 +122,7 @@
             <artifactId>j2v8_linux_x86_64</artifactId>
             <version>${j2v8.version}</version>
         </dependency>
+
     </dependencies>
 
     <build>

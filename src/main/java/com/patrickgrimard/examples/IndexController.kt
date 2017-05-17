@@ -2,6 +2,8 @@ package com.patrickgrimard.examples
 
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.ObjectMapper
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
@@ -15,11 +17,13 @@ import javax.servlet.http.HttpServletRequest
  */
 @Controller
 class IndexController(private val itemRepository: ItemRepository) {
+    @Value("\${my.username}")
+    lateinit var username:String
 
     @GetMapping("/{path:(?!.*.js|.*.css|.*.jpg|api).*$}")
     @Throws(JsonProcessingException::class)
     fun index(model: Model, request: HttpServletRequest): String {
-
+        println(username)
         val mapper = ObjectMapper()
 
         val req = HashMap<String, Any>()

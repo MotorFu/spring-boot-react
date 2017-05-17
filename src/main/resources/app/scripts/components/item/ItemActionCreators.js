@@ -1,4 +1,4 @@
-import {getResource, postResource, deleteResource} from 'utils/request';
+import {getResource, postResource, deleteResource} from '../../utils/request';
 
 export const RECEIVE_ITEMS = 'RECEIVE_ITEMS';
 

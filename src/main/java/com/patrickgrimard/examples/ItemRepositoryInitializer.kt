@@ -2,6 +2,7 @@ package com.patrickgrimard.examples
 
 import org.springframework.boot.CommandLineRunner
 import org.springframework.stereotype.Component
+import org.springframework.stereotype.Service
 
 /**
  *
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Component
  *
  * @author Patrick
  */
-@Component
+@Service
 open class ItemRepositoryInitializer(private val itemRepository: ItemRepository) : CommandLineRunner {
 
 
@@ -21,4 +22,9 @@ open class ItemRepositoryInitializer(private val itemRepository: ItemRepository)
         itemRepository.save(Item("Redux", 0))
         itemRepository.save(Item("RxJS", 4))
     }
+
+    open fun getItem():List<Item>{
+        return itemRepository.findAll()
+    }
+
 }
